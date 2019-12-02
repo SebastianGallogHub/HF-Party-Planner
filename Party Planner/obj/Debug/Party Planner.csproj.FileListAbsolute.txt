@@ -1,0 +1,9 @@
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\bin\Debug\Party Planner.exe.config
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\bin\Debug\Party Planner.exe
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\bin\Debug\Party Planner.pdb
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party Planner.csprojAssemblyReference.cache
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party_Planner.Planner.resources
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party_Planner.Properties.Resources.resources
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party Planner.csproj.GenerateResource.cache
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party Planner.exe
+D:\SEBASTIAN\0.Soft\0.CSharp\0.Masters\Head First\HFCSharp\Party Planner\Party Planner\obj\Debug\Party Planner.pdb
