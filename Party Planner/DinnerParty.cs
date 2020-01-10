@@ -8,7 +8,8 @@ namespace Party_Planner
 {
     public class DinnerParty
     {
-        public int NumberOfPeople;
+        private int numberOfPeople;
+        public int NumberOfPeople { get { return numberOfPeople; } }
         public decimal CostOfBeveragesPerPerson;
         public decimal CostOfDecorations;
         public const int CostOfFoodPerPerson = 25;
@@ -22,17 +23,22 @@ namespace Party_Planner
         public void CalculateCostOfDecorations(bool Fancy)
         {
             CostOfDecorations = Fancy ?
-                15M * NumberOfPeople + 50M :
-                7.50M * NumberOfPeople + 30M;
+                15M * numberOfPeople + 50M :
+                7.50M * numberOfPeople + 30M;
         }
         public decimal CalculateCost(bool Healthy)
         {
             decimal cost =
                 CostOfDecorations +
-                (CostOfBeveragesPerPerson + CostOfFoodPerPerson) * NumberOfPeople;
+                (CostOfBeveragesPerPerson + CostOfFoodPerPerson) * numberOfPeople;
             return Healthy ?
                 cost * 0.95M :
                 cost;
+        }
+        public void SetPartyOptions(int people, bool fancy)
+        {
+            numberOfPeople = people;
+            CalculateCostOfDecorations(fancy);
         }
     }
 }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Party_Planner
@@ -17,15 +10,15 @@ namespace Party_Planner
         public Planner()
         {
             InitializeComponent();
-            dinnerparty = new DinnerParty() { NumberOfPeople = 5 };
+            dinnerparty = new DinnerParty();
             dinnerparty.SetHealthyOption(false);
-            dinnerparty.CalculateCostOfDecorations(true);
+            dinnerparty.SetPartyOptions(5, true);
             DisplayDinnerPartyCost();
         }
 
         private void DisplayDinnerPartyCost()
         {
-            decimal cost = dinnerparty.CalculateCost(HealthyOption.Checked) ;
+            decimal cost = dinnerparty.CalculateCost(HealthyOption.Checked);
             Cost.Text = cost.ToString("c"); //la c es por "Currency" lo cual agrega automáticamente el signo peso
         }
 
@@ -43,7 +36,7 @@ namespace Party_Planner
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            dinnerparty.NumberOfPeople = (int)numericUpDown1.Value;
+            dinnerparty.SetPartyOptions((int)numericUpDown1.Value, FancyDecorations.Checked);
             DisplayDinnerPartyCost();
         }
     }
