@@ -1,44 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Party_Planner
+﻿namespace Party_Planner
 {
     public class DinnerParty
     {
-        private int numberOfPeople;
-        public int NumberOfPeople { get { return numberOfPeople; } }
-        public decimal CostOfBeveragesPerPerson;
-        public decimal CostOfDecorations;
         public const int CostOfFoodPerPerson = 25;
+        public int NumberOfPeople { get; set; }
+        public bool FancyDecorations { get; set; }
+        public bool HealthyOption { get; set; }
+        public decimal Cost
+        {
+            get
+            {
+                decimal cost =
+                    CalculateCostOfDecorations() +
+                    (CalculateCostOfBeveragesPerPerson() + CostOfFoodPerPerson) * NumberOfPeople;
+                if (HealthyOption) cost *= .95m;
+                return cost;
+            }
+        }
 
-        public void SetHealthyOption(bool Healthy)
+        public DinnerParty(int numberOfPeople, bool healthyOption, bool fancyDecorations)
         {
-            CostOfBeveragesPerPerson = Healthy ?
-                5.0M :
-                20.0M;
+            NumberOfPeople = numberOfPeople;
+            HealthyOption = healthyOption;
+            FancyDecorations = fancyDecorations;
         }
-        public void CalculateCostOfDecorations(bool Fancy)
+
+        private decimal CalculateCostOfDecorations()
         {
-            CostOfDecorations = Fancy ?
-                15M * numberOfPeople + 50M :
-                7.50M * numberOfPeople + 30M;
+            return FancyDecorations ?
+                15m * NumberOfPeople + 50m :
+                7.50m * NumberOfPeople + 30m;
         }
-        public decimal CalculateCost(bool Healthy)
+        private decimal CalculateCostOfBeveragesPerPerson()
         {
-            decimal cost =
-                CostOfDecorations +
-                (CostOfBeveragesPerPerson + CostOfFoodPerPerson) * numberOfPeople;
-            return Healthy ?
-                cost * 0.95M :
-                cost;
-        }
-        public void SetPartyOptions(int people, bool fancy)
-        {
-            numberOfPeople = people;
-            CalculateCostOfDecorations(fancy);
+            return HealthyOption ? 5.00m : 20.00m;
         }
     }
 }
